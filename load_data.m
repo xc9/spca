@@ -1,0 +1,13 @@
+fid=fopen('sparseMatrix.csv','r');
+ijv=textscan(fid,'%f %f %f','delimiter',',');
+fclose(fid);
+X=sparse(ijv{1}+1,ijv{2}+1,ijv{3});
+fid=fopen('wordlist.csv','r');
+words=textscan(fid,'%s %*d','delimiter',',');
+fclose(fid);
+options.threshold_m = 1500;
+options.threshold_n = 15;
+options.tolerance = 0.0000001;
+options.max_iteration = 1000000;
+options.num_pc = 10;
+M=X;
