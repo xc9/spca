@@ -1,3 +1,4 @@
+cd ..;
 cd amazonData;
 [a,b]=wrapper('sparseMatrix.csv', 'wordlist.csv', 'a');
 printCSV('amazonOutput_a_1500_wm.txt', a, b);

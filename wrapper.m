@@ -26,13 +26,14 @@ function [ word_pc_list, ps] = wrapper( matrix_file, dict_file, mode )
     fclose(fid);
     words=words{1};
     
-    options.threshold_m = 1500;
+    options.threshold_m = 15;
     options.threshold_n = 15;
     options.tolerance = 0.001;
     options.max_iteration = 1000;
     options.num_pc = 10;
     options.mode = mode;
     
+    M = M' * M;
     [~, qs] = repeated_power_iteration(M, options);    
     word_pc_list = [];
     ps=[];
