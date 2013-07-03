@@ -16,32 +16,25 @@ function [ pc_p, pc_q] = repeated_power_iteration( M, options)
 % pc_p         top k optimal thresholded document vector
 % qc_q         top k optimal thresholded term vector
 % *k = ontions.num_pc
-%M = M' * M;
     pc_p = [];
     pc_q = [];
-    diff_p = [];
-    diff_q = [];
-    diffMat = sparse(zeros(size(M, 2), 1)) * sparse(zeros(size(M,2), 1))';
     for i = 1 : options.num_pc
-        [p, q] = power_iteration(M, options, diffMat, diff_p, diff_q);
+        [p, q] = power_iteration(M, options);
+        
+        pc_p=[pc_p, p]; %#ok<*AGROW>
         if (options.mode == 'b')
             q = [q;zeros((i-1)*options.threshold_n, 1)];
         end
         pc_q=[pc_q, q];
+        
         p_ind = find(abs(p)>0);
         q_ind = find(abs(q)>0);
+        disp(p_ind');
         if (options.mode == 'b')
             M(:,q_ind)=[];
-            M(q_ind,:)=[];
-            diffMat(:,q_ind)=[];
-            diffMat(q_ind,:)=[];
         else
+            M = UpdateSparse(M, p_ind, q_ind, p, q);
             %M(p_ind,q_ind) = M(p_ind,q_ind) - p(p_ind)*q(q_ind)';
-            diffMat = diffMat + sparse(p)*sparse(q');
-            diff_p = [diff_p, sparse(p)];
-            diff_q = [diff_q, sparse(q)];
-            %diffMat = [diffMat, sparse(q)];
-            %disp(sparse(p)'-sparse(q)'/norm(sparse(q)));
         end
     end
 end

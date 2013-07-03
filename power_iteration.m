@@ -1,4 +1,4 @@
-function [ p , q ] = power_iteration( M, options, diffMat, diff_p, diff_q)
+function [ p , q ] = power_iteration( M, options)
 %power_iteration performs the power iteration with hard thresholding steps
 % inputs:
 % M                         the mxn document-by-term matrix
@@ -22,16 +22,6 @@ function [ p , q ] = power_iteration( M, options, diffMat, diff_p, diff_q)
     max_iteration = options.max_iteration;
 
 
-    %% preprocess matrix 
-    
-    if (options.mode ~= 'b')
-        %M = M - diffMat;
-    %    for i = 1:size(diff_p,2)
-    %        M = M - diff_p(:,i) * diff_q(:,i)';
-    %    end
-    end
-    
-    
     %% power iteration algorithm
     p = zeros(m, 1);
     ind_p = randperm(m);
@@ -61,7 +51,7 @@ function [ p , q ] = power_iteration( M, options, diffMat, diff_p, diff_q)
     % begin iterations
     while ~converged
       % obtain new p vector
-      p_new = M' * (M(:,ind_q)*q(ind_q)) - diffMat(:, ind_q) * q(ind_q);
+      p_new = M(:,ind_q)*q(ind_q);
       % sort and obtain k_p top largest entries
       [~,ind_p]=sort(full(abs(p_new)),'descend');
       ind_p = ind_p (1:k_p);
@@ -69,7 +59,7 @@ function [ p , q ] = power_iteration( M, options, diffMat, diff_p, diff_q)
       p_new = p_new(ind_p)/norm(p_new(ind_p));    
 
       % obtain new q vector
-      q_new = M * (M(ind_p,:)' * p_new) - diffMat(ind_p,:)'*p_new;
+      q_new = M(ind_p,:)' * p_new;
       % sort and obtain k_q top largest entries
       [~,ind_q]=sort(full(abs(q_new)),'descend');
       ind_q = ind_q (1:k_q);
@@ -82,7 +72,7 @@ function [ p , q ] = power_iteration( M, options, diffMat, diff_p, diff_q)
       % re-form the length-n vector
       q = zeros(n,1); q(ind_q) = q_new;
       
-      relevantM = M(:, ind_p)' * M(:,ind_q) - diffMat(ind_p, ind_q);
+      relevantM = M(ind_p,ind_q);
       obj1 = frob_m - norm(relevantM, 'fro') + norm (relevantM - p_new*q_new', 'fro'); % update objective
       
       %obj1 = norm(M - p*q','fro');                 
