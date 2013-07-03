@@ -25,7 +25,7 @@ function [ p , q ] = power_iteration( M, options, diffMat, diff_p, diff_q)
     %% preprocess matrix 
     
     if (options.mode ~= 'b')
-        %M = M - diffMat;
+        M = M - diffMat;
     %    for i = 1:size(diff_p,2)
     %        M = M - diff_p(:,i) * diff_q(:,i)';
     %    end
@@ -69,7 +69,7 @@ function [ p , q ] = power_iteration( M, options, diffMat, diff_p, diff_q)
       p_new = p_new(ind_p)/norm(p_new(ind_p));    
 
       % obtain new q vector
-      q_new = M * (M(ind_p,:)' * p_new) - diffMat(ind_p,:)'*p_new;
+      q_new = ((p_new' * M(:, ind_p)') * M - p_new' * diffMat(ind_p, :))';
       % sort and obtain k_q top largest entries
       [~,ind_q]=sort(full(abs(q_new)),'descend');
       ind_q = ind_q (1:k_q);
@@ -82,8 +82,8 @@ function [ p , q ] = power_iteration( M, options, diffMat, diff_p, diff_q)
       % re-form the length-n vector
       q = zeros(n,1); q(ind_q) = q_new;
       
-      relevantM = M(:, ind_p)' * M(:,ind_q) - diffMat(ind_p, ind_q);
-      obj1 = frob_m - norm(relevantM, 'fro') + norm (relevantM - p_new*q_new', 'fro'); % update objective
+      relevantM = M(:, ind_p)' * M(:,ind_q);
+      obj1 = frob_m^2 - norm(relevantM, 'fro') + norm (relevantM - p_new*q_new', 'fro'); % update objective
       
       %obj1 = norm(M - p*q','fro');                 
       if  abs(obj1-obj0) <= tolerance || iter>=max_iteration
