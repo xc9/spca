@@ -65,7 +65,6 @@ function [ p , q ] = power_iteration( M, options)
       ind_q = ind_q (1:k_q);
       % Apply hard-thresholding, then normalize
       q_new = q_new(ind_q);%/norm(q_new(ind_q));        
-      
 
       % re-form the length-m vector
       p = zeros(m,1); p(ind_p) = p_new;

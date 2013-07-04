@@ -20,22 +20,15 @@ function [ pc_p, pc_q] = repeated_power_iteration( M, options)
     pc_q = [];
     for i = 1 : options.num_pc
         [p, q] = power_iteration(M, options);
-        
         pc_p=[pc_p, p]; %#ok<*AGROW>
-        if (options.mode == 'b')
-            q = [q;zeros((i-1)*options.threshold_n, 1)];
-        end
         pc_q=[pc_q, q];
         
         p_ind = find(abs(p)>0);
         q_ind = find(abs(q)>0);
-        
+
+        M(p_ind,q_ind) = M(p_ind,q_ind) - p(p_ind)*q(q_ind)';
         if (options.mode == 'b')
-            M(:,q_ind)=[];
-        else
-            M = UpdateSparse(M, p_ind, q_ind, p, q);
-            %M(p_ind,q_ind) = M(p_ind,q_ind) - p(p_ind)*q(q_ind)';
-        end
+            M(:,q_ind)=0;
     end
 end
 

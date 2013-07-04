@@ -1,0 +1,15 @@
+classdef Util
+    %UNTITLED Summary of this class goes here
+    %   Detailed explanation goes here
+    
+    properties
+    end
+    
+    methods (Static = true)
+        function threshold_oepra = t (a, b)
+            x = a+b;
+        end
+    end
+    
+end
+
