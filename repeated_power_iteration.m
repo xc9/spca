@@ -30,6 +30,8 @@ function [ pc_p, pc_q] = repeated_power_iteration( M, options)
         p_ind = find(abs(p)>0);
         q_ind = find(abs(q)>0);
         
+        
+        
         if (options.mode == 'b')
             M(:,q_ind)=[];
         else
