@@ -1,4 +1,4 @@
-classdef CenteredMat
+classdef CenteredMat <handle
     %Class for representing implicitly centered sparse matrices
     
     properties
@@ -20,36 +20,46 @@ classdef CenteredMat
         
         % matrix * verticalVec
         function v = mvMul(obj, p)
-            v = zeros (size(obj.ucM, 1),1);
-            for rowInd = 1 : length(v)
-                nonzeroInd = find(p);
-                v(rowInd) = (obj.ucM(rowInd, nonzeroInd)- obj.colAvg(nonzeroInd))* p(nonzeroInd);
-            end
+            v = obj.ucM*p-obj.colAvg*p;
+            %for rowInd = 1 : length(v)
+            %    nonzeroInd = find(p);
+            %    v(rowInd) = (obj.ucM(rowInd, nonzeroInd)- obj.colAvg(nonzeroInd))* p(nonzeroInd);
+            %end
         end
         
         % horizVec * matrix
         function v = vmMul(obj, p)
-            v = zeros (size(obj.ucM, 2),1);
-            for colInd = 1 : length(v)
-                nonzeroInd = find(p);
-                v(colInd) = (obj.ucM(nonzeroInd, colInd)- obj.colAvg(colInd))'* p(nonzeroInd);
-            end
+            v = obj.ucM'* p-obj.colAvg'*sum(p);
+            %for colInd = 1 : length(v)
+            %    nonzeroInd = find(p);
+            %    v(colInd) = (obj.ucM(nonzeroInd, colInd)- obj.colAvg(colInd))'* p(nonzeroInd);
+            %end
         end
         
         % get the sub matrix of a certain size
         function m = getMat(obj, rowInd, colInd)
-            m = full(centeredMat(rowInd, colInd));
+            m = full(obj.ucM(rowInd, colInd));
             for i = 1:length(colInd)
                 m(:, i) = m(:, i) - obj.colAvg(colInd(i));
             end
         end
         
         % subtract a matrix from the matrix
-        function m = subMat(obj, rowInd, colInd, subMat)
-            obj.ucM(rowInd, colInd) = obj.ucM(rowInd, colInd) - subMat;
+        function subMat(obj, rowInd, colInd, subCol, subRow)
+            %subMat = subCol* subRow';
+            
+            obj.ucM = UpdateSparse(obj.ucM, rowInd, colInd, subCol, subRow);
             % efficiency issues
             % no re-normalization
         end
+        
+        % remove columns
+        function removeCol(obj, colInd)
+            obj.ucM(:, colInd) = [];
+            obj.colAvg(:, colInd) =[];
+        end
+        
+        
         
     end
     

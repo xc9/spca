@@ -18,6 +18,7 @@ function [ pc_p, pc_q] = repeated_power_iteration( M, options)
 % *k = ontions.num_pc
     pc_p = [];
     pc_q = [];
+    M = CenteredMat(M);
     for i = 1 : options.num_pc
         [p, q] = power_iteration(M, options);
         
@@ -33,9 +34,13 @@ function [ pc_p, pc_q] = repeated_power_iteration( M, options)
         
         
         if (options.mode == 'b')
-            M(:,q_ind)=[];
+            %M.ucM(:, q_ind) = [];
+            %M.colAvg(:, q_ind) =[];
+            M.removeCol(q_ind);
         else
-            M = UpdateSparse(M, p_ind, q_ind, p, q);
+            %M.ucM(p_ind, q_ind) = M.ucM(p_ind, q_ind) - p(p_ind)*q(q_ind)';
+            M.subMat(p_ind, q_ind, p, q);
+            %M = UpdateSparse(M, p_ind, q_ind, p, q);
             %M(p_ind,q_ind) = M(p_ind,q_ind) - p(p_ind)*q(q_ind)';
         end
     end

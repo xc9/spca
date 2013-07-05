@@ -14,8 +14,8 @@ function [ p , q ] = power_iteration( M, options)
 % q         optimal thresholded term vector
     %% set problem size and parameters
     % problem size
-    m = size(M, 1);
-    n = size(M, 2);
+    m = size(M.ucM, 1);
+    n = size(M.ucM, 2);
     k_p = options.threshold_m;
     k_q = options.threshold_n;
     tolerance = options.tolerance;
@@ -34,7 +34,7 @@ function [ p , q ] = power_iteration( M, options)
     ind_q = ind_q(1:min(k_q*5, size(q,1)));
     q(ind_q)=1;
     q = q/norm(q);
-    frob_m = norm(M, 'fro'); %save the frob norm of m
+    frob_m = norm(M.ucM, 'fro'); %save the frob norm of m
     
     p = ones (m, 1);    % initialize to all-ones vector
     p = p/norm(p);
@@ -51,15 +51,15 @@ function [ p , q ] = power_iteration( M, options)
     % begin iterations
     while ~converged
       % obtain new p vector
-      p_new = M * q;
+      p_new = M.mvMul(q);
       [p, ind_p] = Util.thresh(p_new, k_p);
       p = p/norm(p);
       
       % obtain new q vector
-      q_new = M' * p;
+      q_new = M.vmMul(p);
       [q, ind_q] = Util.thresh(q_new, k_q);      
       
-      relevantM = M(ind_p,ind_q);
+      relevantM = M.getMat(ind_p,ind_q);
       obj1 = frob_m - norm(relevantM, 'fro') + norm (relevantM - p(ind_p)*q(ind_q)', 'fro'); % update objective
                 
       if  abs(obj1-obj0) <= tolerance || iter>=max_iteration
