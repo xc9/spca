@@ -16,6 +16,14 @@ classdef CenteredMat <handle
             for i = 1:length(cm.colAvg)
                 cm.colAvg(i) = sum(M(:,i))/size(cm.ucM, 1);
             end
+            disp(max(cm.colAvg));
+            disp(max(max(M)));
+        end
+        
+        function recenter(obj)
+            for i = 1:length(obj.colAvg)
+                obj.colAvg(i) = sum(obj.ucM(:,i))/size(obj.ucM, 1);
+            end
         end
         
         % matrix * verticalVec
