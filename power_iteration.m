@@ -14,8 +14,8 @@ function [ p , q ] = power_iteration( M, options)
 % q         optimal thresholded term vector
     %% set problem size and parameters
     % problem size
-    m = size(M, 1);
-    n = size(M, 2);
+    m = size(M.ucM, 1);
+    n = size(M.ucM, 2);
     k_p = options.threshold_m;
     k_q = options.threshold_n;
     tolerance = options.tolerance;
@@ -34,7 +34,7 @@ function [ p , q ] = power_iteration( M, options)
     ind_q = ind_q(1:min(k_q*5, size(q,1)));
     q(ind_q)=1;
     q = q/norm(q);
-    frob_m = norm(M, 'fro'); %save the frob norm of m
+    frob_m = norm(M.ucM, 'fro'); %save the frob norm of m
     
     p = ones (m, 1);    % initialize to all-ones vector
     p = p/norm(p);
@@ -51,31 +51,17 @@ function [ p , q ] = power_iteration( M, options)
     % begin iterations
     while ~converged
       % obtain new p vector
-      p_new = M(:,ind_q)*q(ind_q);
-      % sort and obtain k_p top largest entries
-      [~,ind_p]=sort(full(abs(p_new)),'descend');
-      ind_p = ind_p (1:k_p);
-      % Apply hard-thresholding, then normalize
-      p_new = p_new(ind_p)/norm(p_new(ind_p));    
-
+      p_new = M.mvMul(q);
+      [p, ind_p] = Util.thresh(p_new, k_p);
+      p = p/norm(p);
+      
       % obtain new q vector
-      q_new = M(ind_p,:)' * p_new;
-      % sort and obtain k_q top largest entries
-      [~,ind_q]=sort(full(abs(q_new)),'descend');
-      ind_q = ind_q (1:k_q);
-      % Apply hard-thresholding, then normalize
-      q_new = q_new(ind_q);%/norm(q_new(ind_q));        
+      q_new = M.vmMul(p);
+      [q, ind_q] = Util.thresh(q_new, k_q);      
       
-
-      % re-form the length-m vector
-      p = zeros(m,1); p(ind_p) = p_new;
-      % re-form the length-n vector
-      q = zeros(n,1); q(ind_q) = q_new;
-      
-      relevantM = M(ind_p,ind_q);
-      obj1 = frob_m - norm(relevantM, 'fro') + norm (relevantM - p_new*q_new', 'fro'); % update objective
-      
-      %obj1 = norm(M - p*q','fro');                 
+      relevantM = M.getMat(ind_p,ind_q);
+      obj1 = frob_m - norm(relevantM, 'fro') + norm (relevantM - p(ind_p)*q(ind_q)', 'fro'); % update objective
+                
       if  abs(obj1-obj0) <= tolerance || iter>=max_iteration
          converged=1;
       end
