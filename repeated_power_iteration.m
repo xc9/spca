@@ -12,14 +12,20 @@ function [ pc_p, pc_q] = repeated_power_iteration( M, options)
 %                           iterations < tolerance
 % options.mode              can be 'a' or 'b'
 % options.num_pc            number of principal components to return
+% options.centerOption      1: centers rows, 2: centers columns, 0: no
+%                           centering
 % output:
-% pc_p         top k optimal thresholded document vector
-% qc_q         top k optimal thresholded term vector
+% pc_p         top k optimal thresholded document vector (each column is a
+%              pc)
+% qc_q         top k optimal thresholded term vector (each column is a pc)
 % *k = ontions.num_pc
+
     pc_p = [];
     pc_q = [];
-    M = CenteredMat(M);
+    M = CenteredMat(M, options.centerOption);
     for i = 1 : options.num_pc
+        
+        % where the main computation occurs
         [p, q] = power_iteration(M, options);
         
         pc_p=[pc_p, p]; %#ok<*AGROW>
@@ -32,16 +38,11 @@ function [ pc_p, pc_q] = repeated_power_iteration( M, options)
         q_ind = find(abs(q)>0);
         
         
-        
+        % either remove the columns or subtract the dyad given by the pc's
         if (options.mode == 'b')
-            %M.ucM(:, q_ind) = [];
-            %M.colAvg(:, q_ind) =[];
             M.removeCol(q_ind);
         else
-            %M.ucM(p_ind, q_ind) = M.ucM(p_ind, q_ind) - p(p_ind)*q(q_ind)';
-            M.subMat(p_ind, q_ind, p, q);
-            %M = UpdateSparse(M, p_ind, q_ind, p, q);
-            %M(p_ind,q_ind) = M(p_ind,q_ind) - p(p_ind)*q(q_ind)';
+            M.subMat(p, q);
         end
     end
 end

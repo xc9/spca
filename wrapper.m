@@ -1,4 +1,4 @@
-function [ word_pc_list, ps] = wrapper( matrix_file, dict_file, mode )
+function [ word_pc_list, ps, indices] = wrapper( matrix_file, dict_file, mode )
 %wrapper a convenience class for loading the matrix and translating the
 %principal component to a word matrix
 % inputs:
@@ -16,35 +16,49 @@ function [ word_pc_list, ps] = wrapper( matrix_file, dict_file, mode )
 %                           of weights, corresponding to the weight of
 %                           words in word_pc_list (weights are the 
 %                           magnitudes of entries inprincipal components)
+% indices                   the indices of the words in word_pc_list
+    
+    %Read in the matrix and dictionary files
     fid=fopen(matrix_file,'r');
     ijv=textscan(fid,'%f %f %f','delimiter',',');
     fclose(fid);
     M=sparse(ijv{1}+1,ijv{2}+1,ijv{3});
-    %M = M' * M;
+
     fid=fopen(dict_file,'r');
     words=textscan(fid,'%s %*d','delimiter',',');
     fclose(fid);
     words=words{1};
     
-    options.threshold_m = 150;
-    options.threshold_n = 15;
+    %Set the options
+    options.threshold_m = 150; % 150 documents
+    options.threshold_n = 15;  % 15 terms
     options.tolerance = 0.001;
     options.max_iteration = 1000;
     options.num_pc = 10;
     options.mode = mode;
-
+    options.centerOption = 0;
+    
+    % columns in qs are the principal components
     [~, qs] = repeated_power_iteration(M, options);    
     word_pc_list = [];
     ps=[];
+    indices = [];
+    
+    indexMap = 1:length(words);
     for i = 1 : options.num_pc
         pc_q = abs(qs(:, i));
-        [~,index]=sort(pc_q,'descend');
-        index = index (1 : options.threshold_n);
+        [~, index] = Util.thresh(pc_q, options.threshold_n);
         word_pc = words(index);
         word_pc_list = [word_pc_list, word_pc]; %#ok<AGROW>
+        oldIndices = indexMap(index);
         ps = [ps, pc_q(index)];
+        % if features were removed, remove features from dictionary as well
+        % so the indices match correctly
         if options.mode == 'b'
             words(index)=[];
+            indexMap(index) = [];
+        end
+        indices = [indices, oldIndices];
     end
 end
 

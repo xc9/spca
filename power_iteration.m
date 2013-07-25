@@ -9,7 +9,7 @@ function [ p , q ] = power_iteration( M, options)
 % options.max_iteration     max iterations to run
 % options.tolerance         stop when difference in objective across 2
 %                           iterations < tolerance
-% output:
+% outputs:
 % p         optimal thresholded document vector
 % q         optimal thresholded term vector
     %% set problem size and parameters
@@ -23,28 +23,12 @@ function [ p , q ] = power_iteration( M, options)
 
 
     %% power iteration algorithm
-    p = zeros(m, 1);
-    ind_p = randperm(m);
-    ind_p = ind_p(1:min(k_p*5, size(p,1)));
-    p(ind_p)=1;
-    p = sparse(p);
-    p = p/norm(p);
-    q = zeros(n, 1);
-    ind_q = randperm(n);
-    ind_q = ind_q(1:min(k_q*5, size(q,1)));
-    q(ind_q)=1;
-    q = q/norm(q);
-    frob_m = norm(M.ucM, 'fro'); %save the frob norm of m
-    
+    % initialize variables
     p = ones (m, 1);    % initialize to all-ones vector
     p = p/norm(p);
     q = ones (n, 1);    % initialize to all-ones vector
-    q = q/norm(q);
-    
-    
+    q = q/norm(q);    
     obj0 = inf;
-    %obj0= frob_m - norm(M(p_ind, q_ind),'fro') + norm(M-p*q','fro'); %initial objective
-
     converged=0;
     iter=0;
 
@@ -52,16 +36,17 @@ function [ p , q ] = power_iteration( M, options)
     while ~converged
       % obtain new p vector
       p_new = M.mvMul(q);
-      [p, ind_p] = Util.thresh(p_new, k_p);
-      p = p/norm(p);
+      
+      [p, ind_p] = Util.thresh(p_new, k_p); % threshold
+      p = p/norm(p);                        % normalize
       
       % obtain new q vector
       q_new = M.vmMul(p);
-      [q, ind_q] = Util.thresh(q_new, k_q);      
+      [q, ind_q] = Util.thresh(q_new, k_q); % threshold (do not normalize)
       
-      relevantM = M.getMat(ind_p,ind_q);
-      obj1 = frob_m - norm(relevantM, 'fro') + norm (relevantM - p(ind_p)*q(ind_q)', 'fro'); % update objective
-                
+      obj1 = norm(M.ucM - p*q', 'fro');
+
+      % check termination condition
       if  abs(obj1-obj0) <= tolerance || iter>=max_iteration
          converged=1;
       end
