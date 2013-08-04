@@ -34,6 +34,21 @@ classdef Util
             fclose(fid);
         end
         
+        function printTitles ( outputfile, cellofstrings, arrayofweights)
+            fid=fopen(outputfile,'wt');
+            [rows, cols] = size(cellofstrings);
+            for j = 1:cols
+                for i=1:rows
+                    baseStr = [num2str(arrayofweights(i,j)), char(9), cellofstrings{i,j}];
+                    baseStr = [baseStr, char(10)];
+                    fprintf(fid,baseStr);
+                end
+                separator = ['-------------------',char(10)];
+                fprintf(fid,separator);
+            end
+            fclose(fid);
+        end
+        
         % Inputs:
         %   qs: each column is a principal component
         %   num_original_entries: the numer of columns in the matrix M,
@@ -43,12 +58,17 @@ classdef Util
         %   indices: The indices of top k entries in the principal
         %       component
         %   weights: the abs value of the entries given by indices
-        function [indices, weights] = get_indices_and_weights (qs, num_original_entries, options) 
+        function [indices, weights] = get_indices_and_weights (qs, varargin) 
             weights=[];
             indices = [];
-            for i = 1 : options.num_pc
+            if (~isempty(varargin))
+                numtothresh=varargin{1};
+            else
+                numtothresh=length(find(qs(:, 1)));
+            end
+            for i = 1 : size(qs, 2)
                 pc_q = abs(qs(:, i));
-                [~, index] = Util.thresh(pc_q, options.threshold_n);
+                [~, index] = Util.thresh(pc_q, numtothresh);
                 actualIndices = index;
                 indices = [indices, actualIndices];
                 weights = [weights, pc_q(index)];
@@ -79,6 +99,12 @@ classdef Util
         function [ words ] = load_dict( dict_file )
             fid=fopen(dict_file,'r');
             words=textscan(fid,'%s %*d','delimiter',',');
+            fclose(fid);
+            words=words{1};
+        end
+        function [ words ] = load_fnames( dict_file )
+            fid=fopen(dict_file,'r');
+            words=textscan(fid,'%s','Delimiter','\n');
             fclose(fid);
             words=words{1};
         end
