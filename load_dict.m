@@ -4,4 +4,4 @@ function [ words ] = load_dict( dict_file )
     fclose(fid);
     words=words{1};
 end
- 
+
