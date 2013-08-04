@@ -23,6 +23,7 @@ function [ pc_p, pc_q] = repeated_power_iteration( M, options)
     pc_p = [];
     pc_q = [];
     M = CenteredMat(M, options.centerOption);
+    original_q_size = size(M.ucM, 2);
     for i = 1 : options.num_pc
         
         % where the main computation occurs
@@ -30,7 +31,7 @@ function [ pc_p, pc_q] = repeated_power_iteration( M, options)
         
         pc_p=[pc_p, p]; %#ok<*AGROW>
         if (options.mode == 'b')
-            q = [q;zeros((i-1)*options.threshold_n, 1)];
+            q = [q;zeros(original_q_size-size(q, 1),1)];
         end
         pc_q=[pc_q, q];
         
