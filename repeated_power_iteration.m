@@ -34,8 +34,8 @@ function [ pc_p, pc_q] = repeated_power_iteration( M, options)
         end
         pc_q=[pc_q, q];
         
-        p_ind = find(abs(p)>0);
-        q_ind = find(abs(q)>0);
+        p_ind = find(p);
+        q_ind = find(q);
         
         
         % either remove the columns or subtract the dyad given by the pc's
@@ -44,6 +44,9 @@ function [ pc_p, pc_q] = repeated_power_iteration( M, options)
         else
             M.subMat(p, q);
         end
+    end
+    if (options.mode == 'b')
+        pc_q = Util.remap(pc_q);
     end
 end
 

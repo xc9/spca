@@ -1,4 +1,4 @@
-function [ word_pc_list, ps, indices] = wrapper( matrix_file, dict_file, mode )
+function [ word_pc_list, weights, indices] = wrapper( matrix_file, dict_file, mode )
 %wrapper a convenience class for loading the matrix and translating the
 %principal component to a word matrix
 % inputs:
@@ -11,7 +11,7 @@ function [ word_pc_list, ps, indices] = wrapper( matrix_file, dict_file, mode )
 %                           num_pc. In other words, each column is a vector
 %                           of words (sorted in order of magnitude)
 %                           in the principal component vector
-% ps                        a x-by-y matrix, where x = threshold and y =
+% weights                   a x-by-y matrix, where x = threshold and y =
 %                           num_pc. In other words, each column is a vector
 %                           of weights, corresponding to the weight of
 %                           words in word_pc_list (weights are the 
@@ -19,46 +19,15 @@ function [ word_pc_list, ps, indices] = wrapper( matrix_file, dict_file, mode )
 % indices                   the indices of the words in word_pc_list
     
     %Read in the matrix and dictionary files
-    fid=fopen(matrix_file,'r');
-    ijv=textscan(fid,'%f %f %f','delimiter',',');
-    fclose(fid);
-    M=sparse(ijv{1}+1,ijv{2}+1,ijv{3});
-
-    fid=fopen(dict_file,'r');
-    words=textscan(fid,'%s %*d','delimiter',',');
-    fclose(fid);
-    words=words{1};
-    
+    M=Util.load_matrix(matrix_file,1);
     %Set the options
-    options.threshold_m = 150; % 150 documents
-    options.threshold_n = 15;  % 15 terms
-    options.tolerance = 0.001;
-    options.max_iteration = 1000;
-    options.num_pc = 10;
-    options.mode = mode;
-    options.centerOption = 0;
-    
+    options = Util.make_option(150, 15, 0.001, 1000, 10, mode, 0);
     % columns in qs are the principal components
-    [~, qs] = repeated_power_iteration(M, options);    
-    word_pc_list = [];
-    ps=[];
-    indices = [];
+    [ps, qs] = repeated_power_iteration(M, options);     
     
-    indexMap = 1:length(words);
-    for i = 1 : options.num_pc
-        pc_q = abs(qs(:, i));
-        [~, index] = Util.thresh(pc_q, options.threshold_n);
-        word_pc = words(index);
-        word_pc_list = [word_pc_list, word_pc]; %#ok<AGROW>
-        oldIndices = indexMap(index);
-        ps = [ps, pc_q(index)];
-        % if features were removed, remove features from dictionary as well
-        % so the indices match correctly
-        if options.mode == 'b'
-            words(index)=[];
-            indexMap(index) = [];
-        end
-        indices = [indices, oldIndices];
-    end
+    words=Util.load_dict(dict_file);
+    
+    [indices, weights] = Util.get_indices_and_weights(qs, length(words), options);
+    word_pc_list = words(indices);
 end
 

@@ -1,0 +1,510 @@
+Term pc: (Research about research)
+
+research
+students
+program
+science
+university
+graduate
+faculty
+undergraduate
+materials
+engineering
+project
+training
+education
+activities
+provide
+
+Document pc:
+
+Engineering Research in U.S. Higher Education: Characteristics, Trends, and Policy Options
+Nevada's Systemic Improvement Plan
+Industry/University Cooperative Research Center for Design of Analog-Digital Integrated Circuits
+EPWG: Plugged In: An Interactive Program Designed to Advance the Scientific, Mathematic and Computer Literacy of Girls
+Research Training Group in Optical Biomolecular Devices
+Presidential Awards For Excellence In Science, Mathematics and Engineering Mentoring.
+Research-Based Education: A Template for Promoting Discovery Learning on Today's College Campuses
+Materials Research Science and Engineering Center on Oxide Thin Films, Probes and Surfaces
+Minority Participation in Keck Geology Consortium Undergraduate Student-Faculty Research Program
+Initiative for an Enhanced Mathematics Education in Princeton
+VIGRE: Vertical Integration of Research and Education in the Mathematical Sciences at the University of Wisconsin-Madison
+REU: Cellular and Molecular Biology
+Research Experiences for Undergraduates in Biological Sciences at Carnegie Mellon University
+FRG: Materials Computation Center
+Vertical Integration of Research and Education in the Mathematical Sciences at the University of Arizona
+VIGRE: The University of Chicago's Vertical Integration Program
+VIGRE: Department-Wide Infrastructure: Widening the Pipeline for Mathematical Sciences
+VIGRE: Integration of Research and Education in Mathematics and Applied Mathematics
+UCSD Minority Access to Math Engineering and Science
+Mathematics Research and Education at the University of Illinois at Urbana-Champaign
+Duke University Program for Vertically Integrated, Interdisciplinary Reseasrch
+UCLA Mathematics Department 1999 VIGRE Proposal
+Pilot Study to Establish the Nature and Impact of Effective Undergraduate Research Experiences on Learning, Attitude, and Career Choice
+VIGRE at UT-Austin
+ACQUISITION OF AN INTEGRATED TESTING SYSTEM FOR CIVIL INFRASTRUCTURE ENGINEERING RESEARCH AND EDUCATION
+Acquisition of Instrumentation for Ion Channel Research and Research Training
+CAREER: Theory and Simulation of the Structure and Mechanical Properties of Non-crystalline Solids
+Establishing A Computer Laboratory for Student/Faculty Economics Research
+U.S./Africa Materials Institute
+REU Site: Research Internships in Neural and Behavioral Sciences
+------------------------------------------------------------------------------------
+Term pc: (Unclear)
+
+data
+analysis
+information
+time
+models
+system
+methods
+based
+sets
+model
+large
+develop
+development
+systems
+high
+
+Document pc:
+
+Mathematical Sciences: Some Problems for Incomplete Survival Data
+Arctic System Science Data Coordination Center At NSIDC
+Moving the Ribosome Database Project (RDP) to a DBMS Foundation
+Moving the Ribosome Database Project (RDP) to a DBMS Foundation
+3D Reconstruction of Icosahedral Viruses from X-ray Scattering Data
+Solid Model Experiments in Force Feedback for Molecular Docking
+Multivariate Nonparametric Methodology Studies
+Three Dimensional Visualization Methods for Phylogenetic Data
+Database Tools for Analyzing Forest Canopy Information
+Mathematical Sciences/GIG: Immersive Methods (Virtual Reality) for Exploratory Analysis
+Scientific Protocols for the Land Cover/Biology GLOBE Program Investigation
+Regional Cooperative Activities to Support Global Change Research in IAI Countries - Jamaica
+A Database System for Neuronal Pattern Analysis
+Algorithms for Data Compression Based on Grammars and Trees
+Collaborative Research on the Expected Utility Theory of War
+Collaborative Research on the Expected Utility Theory of War
+Dynamic Employer-Household Data and the Social Data Infrastructure
+KDI: Accessing Large Distributed Archives in Astronomy and Particle Physics
+Collaborative Research on the Expected Utility Theory of War
+Data Embedding, the Method of Types, and Universal Receivers
+Cyclical, Intergenerational and Life Course Measures of Economic and Social Behavior: The Panel Study of Income Dynamics (PSID), 2002-2006
+Adaptive Synchronization Framework Supporting Device-independent Mobile Computing
+GARCH, Diffusion, Stochastic Volatility and Wavelets
+A Feasible Uniform Standard for Deep Citation of Social Science Data
+2000 U.S. Census Data Project
+Weighted Empirical Likelihood
+ITR: A Versatile, Extensible System for Neutron Scattering Data Visualization and Analysis
+Scientific Support for the GLOBE Land Cover Investigation
+VISUALIZATION: Effective and Efficient Segmentation Frameworks for Scientific Data Exploration
+Establishing an Integrated Multibeam and Geophysical Database for the Antarctic
+------------------------------------------------------------------------------------
+Term pc: (cell biology)
+
+protein
+proteins
+cell
+cells
+dna
+binding
+function
+gene
+specific
+membrane
+structure
+studies
+molecular
+genes
+understanding
+
+Document pc:
+
+Structure/Function Studies of Lipid Binding Proteins
+Circular Dichroism of fd and Pf3 Single-Strand DNA-Binding Proteins
+Expression Analysis of the Genome of Escherichia Coli
+A Dissection of the Yeast ER Translocation Machine
+Structure-Function Studies of Lipid Binding Proteins
+How Single Genes Provide Proteins to Multiple Cellular Compartments; Collaborative Research
+Role of Phosphorylation in DNA Replication and Nuclear Transport
+RUI: Normal Cellular Process During Heat Shock: Secretory Protein mRNA Stability
+The Role of 54CP in Chloroplast Protein Targeting
+How Single Genes Provide Proteins to Multiple Cellular Compartments; Collaborative Research
+Protein-RNA Interactions in Splicing of a Physarum Group I Intron
+Conference on Aminoacyl tRNA Synthetases in Biology and Disease being held February 1, 1997 in Taos, New Mexico
+Mechanistic Studies of TfdA, an Alpha-Ketoglutarate- Dependent Dioxygenase
+Investigation of the Transport of Nitric Oxide by Myoglobin Using Sol-Gel Glass Encapsulation
+Characterization of Proteins that Interact with CDPK Gamma
+A Plant Protein Kinase and A Phosphatidylinositol 3-Kinase Involved in Vacuolar Protein Transport and Development
+Structure of RNA and its Binding Proteins
+Protein-RNA Interactions in the Ribosome
+Structural Basis of Molecular Discrimination through Directed Evolution.
+NMR Structures of Peptides Bound to Large Proteins: Transferred-NOESY Test Beds
+Analysis of Protein-Protein Interactions of Eps15 Using Fluorescence Resonance Energy Transfer (FRET)
+RUI: Protein-Protein Interactions Mediating Substrate Recognition by the VirB Complex of Agrobacterium Tumefaciens
+The Interactions of TRAP with RNA to Regulate the trp Genes in Bacilli
+Protein-RNA Interactions in Splicing of a Physarum Group I Intron
+RUI: Protein-Protein Interactions Mediating Substrate Recognition by the VirB Complex of Agrobacterium Tumefaciens
+Protein Import Into the Complex Chloroplasts of Euglena
+CAREER: Electrophoresis of Proteins in Templated Nanoporous Materials
+Protein Import Into the Complex Chloroplasts of Euglena
+Protein Import Into the Complex Chloroplasts of Euglena
+Plant Vacuole Biogenesis and Function
+------------------------------------------------------------------------------------
+Term pc: (Mathematics)
+
+theory
+study
+problems
+groups
+algebraic
+work
+geometry
+number
+mathematics
+group
+mathematical
+applications
+quantum
+spaces
+physics
+
+Document pc:
+
+Mathematical Sciences: Algebraic Topology of Algebraic Varieties and Conformal Field Theory
+Mathematical Sciences: p-adic Automorphic Forms
+Mathematical Sciences: Group Theoretic Problems in Model Theory and Set Theory
+Matheamtical Sciences: Homotopy Theory and its Applications
+Modular Representation Theory of Finite and Algebraic Groups
+Operator Theory and Systems Engineering
+Arithmetic, Geometric, and Ergodic Aspects of the Theory of Lie Groups and Their Discrete Subgroups
+Krein Space Operator Theory and Applications
+Research in Random Matrices and Integrable Systems
+Infinite-Dimensional Lie (Super) Algebras and Related Algebraic Structures
+Noncommutative geometry, supergeometry, gauge theory and M-theory
+Quantization, Quantum Groups, the Yang-Baxter Equation, Integrable Systems, and Special Functions
+Projects In Operator Algebra: Tensor Algebras, Coordinates, and Toeplitz Operators
+Algebraic Structures of Representation Theory of Infinite Dimensional Lie Algebras and Quantum Field Theory
+Vertex Operator Algebras and Mathematical Conformal Field Theory
+Strict Quantization, Elliptic Operators, and E-Theory
+Number Theory with Emphasis on Algorithms and Algebraic Number Theory
+Operatory Theory and Systems Engineering
+Investigations in Model Theory
+Non-commutative Analysis and Symmetry in Operator Algebra
+Aspects of Geometry and Topology Related to High Energy Theoretical Physics
+Gauge theory and low-dimensional topology
+Gauge theory and low-dimensional topology
+Large Scale Geometry, Index Theory and Representations of Groups
+Inner Models, Fine Structure and Large Cardinals
+Noncommutative Geometry, Supergeometry, Gauge Theory and M-Theory
+Year of Algebra at the University of Florida
+The Many Foundations of Newtonian Dynami
+Groups and Representations Conference; March 25-27, 2004; Eugene, OR
+Support for K-theory Conferences; 2003-2006
+------------------------------------------------------------------------------------
+Term pc: (control and network)
+
+control
+design
+nonlinear
+process
+performance
+network
+algorithms
+problem
+proposed
+optimal
+developed
+techniques
+adaptive
+robust
+feedback
+
+Document pc:
+
+Mathematical Sciences: Stochastic Control and Nonlinear Estimation
+ENGINEERING RESEARCH EQUIPMENT: A Real-Time Processor and Diagnostic Equipment for Closed-Loop Control Experiments
+Best Achievable Control System Performance
+Mathematical Sciences: Optimality Conditions and Algorithm Covergence Behavior for Optimal Control Problems
+Engineering Research Equipment: Instrumentation for a Vertically Integrated Controls Laboratory
+ARI: Acquisition of Multidisciplinary Instrumentation for Intelligent Control
+Career: Nonlinear Control: New Problems for Robust and Adaptive Design
+CAREER: Multi-Variable Optimality-Guided Robust Adaptive Control Design - A Game Theoretic Approach
+CAREER: On the Design of Randomized Algorithms for Robust Control Problems
+CAREER: Nonlinearity and Uncertainty in Control System Design
+Synthesis of Optimal Plantwide Control Systems for Integrated Chemical Processes
+Integrated Tools for Automated Control Synthesis and Fault Diagnosis of Automated Manufacturing Systems using Discrete Condition Models
+Learning Sensorimotor Control of Balance and Locomotion
+Career: Nonlinear Control: New Problems for Robust and Adaptive Design
+Collaborative Research: The Instruments for Political Control of Bureaucracy in Parliamentary and Separation of Powers Systems
+Robust Nonlinear Control: Feedback Passivation and Input Saturation Techniques
+A Mathematical Control Theory for the Partial Differential Equations of Thermal/Structure and Structural Acoustic Interactions
+CAREER: Hybrid Control of Complex Networked Systems
+MHD Energy Propulsion
+Groups and Singularities in Quantum Control and Nonlinear Design
+Flow Control for Multimedia Streaming Over the Internet
+Collaborative Research: A Control Theoretic Approach to the Design of Internet Traffic Managers
+Collaborative Research: A Control Theoretic Approach to the Design of Internet Traffic Managers
+Improvements and New Techniques for Deterministic and Stochastic SIR based Power Control for 3-G Wireless CDMA Networks
+ITR/AP: Reconfigurable Computing for Real-Time Control Systems
+ITR/AP: Reconfigurable Computing for Real-Time Control Systems
+A Mathematical Control Theory for the Partial Differential Equations of Thermal/Structure and Structural Acoustic Interactions
+Symposium of New Trends in Nonlinear Dynamics and Control, and their Applications
+CAREER: Linguistic Control of Mobile Robots
+CAREER: Multi-Variable Optimality-Guided Robust Adaptive Control Design - A Game Theoretic Approach
+------------------------------------------------------------------------------------
+Term pc: (Magnetic field)
+
+magnetic
+properties
+field
+spin
+temperature
+electron
+state
+fields
+electronic
+devices
+low
+fundamental
+experimental
+important
+behavior
+
+Document pc:
+
+Rock Magnetic Studies of Soils and Pedogenic Processes
+NSF Young Investigator
+Fermi-Liquid and Nonfermi-Liquid Properties in Weakly Hybridized 4f Intermetallic Compounds
+Development of a Unique Interactive Growth Chamber for Magnetic Nanostructures
+Magnetic Ordering in Solid 3He
+Field-Induced Instabilities and Bifurcations in Magnetic Fluids
+Exotic Magnetic Behavior of Pure and Doped Spin-Gap / Spin-Liquid Systems Studied by Muon Spin Relaxation
+GOALI: Magnetic Thin-Films for Data Storage
+Investigation of the Magnetic Anistropy and Magnetic Phase Transition using Stepped Surfaces
+Manipulation of Cell Division with Static Magnetic Fields
+Low Temperature Scanning Tunneling Microscope Studies of Magnetic Nanostructures
+Magnetic Separations for Environmentally Benign Processing
+Collaborative Research: Collective and Coherent Spin Organization in Magnetic Semiconductor Nanostructures
+Collaborative Research: Collective and Coherent Spin Organization in Magnetic Semiconductor Nanostructures
+STM-fabricated Magnets and Their Influence on Semiconductor Electronics
+Experimental Studies of Surface and Interface Magnetism by Spin Polarized Electron Techniques
+Dynamics of Ultrafast Magnetization in Magnetic Thin Films and Heterostructures
+Development of NMR and Education for Extreme Conditions: Low Temperature, High Field and Field Gradients
+CAREER: Effects of Pressure and Magnetic Field in Strongly-Correlated-Electron Systems with Non-Collinear Magnetism
+Magnetic and Thermodynamic Study of Solid 3He
+SGER: Development of a Soft Magnetic Material with Enhanced High Temperature Strength
+NSE/NIRT: Quantum Effects in Single Molecule Magnets
+Towards the Development of Magnetic Provenance Tracers in Antarctic Glacial Marine Sediments: A Pilot Study in the Antarctic Peninsula Region.
+Neutron Scattering Studies of Magnetic Semiconductor Nanostructures
+Magnetic Behavior in Nanoscale Magnetic Heterostructures
+Local and Non-local Magnetic Moments in Semiconductors
+Development of Instrumentation for Teaching and Research on Thin Magnetic Film Microstructure Switching Dynamics
+Studies of Spin-Electronic Materials Using Synchrotron Radiation
+CAREER: Spin Polarization Spectroscopy of Complex Magnetic Materials and Spin Electronic Devices
+RUI: Dynamic Properties of Magnetic Multilayers and Nanostructures
+------------------------------------------------------------------------------------
+Term pc: (something about surface, seems to contain multiple unrelated topics)
+
+surface
+surfaces
+processes
+chemistry
+chemical
+energy
+water
+metal
+growth
+reactions
+scale
+phase
+results
+effects
+experiments
+
+Document pc:
+
+RUI: EAM/Simulation Studies of the Energetics and Kinetics of Surface Reconstruction
+Collision Induced Surface Processes
+Collaborative Research: Validation of Land Surface Hydrology Parameterizations for Climate Models
+Collaborative Research: Validation of Land Surface Hydrology Parameterizations for Climate Models
+Contact, Deformations, and Adhesion Between Rough Surfaces
+Propagation and Scattering of Coupled Elastic Surface Waves in Curved Structure
+Microtubule-Dependent Transport of Cell Surface Domains
+CAREER: Surface Scattering Effects in Mine Detection and Remote Sensing Systems
+Electron Density Waves at Metal Surfaces: From Friedel Oscillations to Charge Density Waves
+Glass Surfaces: Experimental Study and Computer Simulation
+Contact, Deformations, and Adhesion Between Rough Surfaces
+Snow Surface Roughness - Data Collection, Geostatistical Analysis, Relationship to Meteorologic Observations, and Relevance to Snow Hydrologic Models
+Surface Mediated Integration of Stereopsis and Perspective
+Nanoscale Structure and Dynamics of Self-Organized Steps on Silicon Surfaces
+A Combined Experimental and Theoretical Investigation of the Plasma-Surface Interactions in Plasma Deposition of Hydrogenated Amorphous and Nanocrystalline Silicon Films
+Acquisition of an Ultrahigh Vacuum Scanning Tunneling Microscope for the Study of Surface Chemistry and Surface Physics
+Interfacial Phenomena Near Phase Transitions
+NER: Nano-Textured Surfaces: Super-Hydrophobicity and Liquid Adhesion
+Nonequilibrium Pattern Formation In Erosion Processes
+Development of a High Temperature Maximun Bubble Pressure Apparatus for Measuring Surface Tension of Molten Metals
+Development of a High Temperature Maximun Bubble Pressure Apparatus for Measuring Surface Tension of Molten Metals
+MRI: Acquistion of an X-ray Photoelectron Spectroscopy System for Surface Chemical Analysis
+Observing Wind Induced Near-Surface Currents within the Water Wave Boundary
+Collaborative Research: Mesoscale Structure of Boundary Layer Water Vapor Budgets and Depth during IHOP: Observations, Modeling, and Implications for Convective Initiation
+Collaborative Research: Mesoscale Structure of Boundary Layer Water Vapor Budgets and Depth during IHOP: Observations, Modeling, and Implications for Convective Initiation
+Surface Diffusion and Ordering Processes Exploited for Directed Self-Assembly Using Amorphous Semiconductors
+RUI: Halogen-Etched and Chemically-Sputtered Germanium Surfaces
+Numerical Investigations of Three and Two Dimensional Free Boundary Problems
+In-situ X-ray Studies of Surface Structure during Plasma Processing
+RUI: The Interdependence of GaN Surface Chemistry and Surface Morphology and Reconstruction
+------------------------------------------------------------------------------------
+Term pc: (research on teaching)
+
+teachers
+school
+year
+teacher
+schools
+teaching
+learning
+technology
+college
+middle
+support
+summer
+curriculum
+student
+community
+
+Document pc:
+
+A Multidimensional Program to Enhance Subject Matter Competency of an Improve Collaboration Among Teachers of Grades 5-12
+Project T.E.P.S. (Teaching Elementary Physical Science)
+Science in the Twenty First Century: The Science 21 Project
+INtegrating LABoratory Instruction and Assessment (INLAB)
+Alliance of Mentors For Physics Instruction: A Teacher Leadership Institute
+Earthkeeping: Restoration-based Teacher Training Institutes
+The KITES Project: Kits in Teaching Elementary Science
+Arizona Collaborative for Excellence in the Preparation of Teachers
+EPWG: Plugged In: An Interactive Program Designed to Advance the Scientific, Mathematic and Computer Literacy of Girls
+The Mathematics Teacher Development (MTD) Project
+Computer Technology and Instructional Reform: A National Survey of Teachers and Their School Contexts
+PPD/DP: Demonstration Project to Promote Opportunities in Science, Mathematics, and Engineering to Students with Disabilities
+PPD/DP: Working with Biotechnology
+WISE Investments
+CAREER: Teacher Knowledge, Beliefs, & Technology: Constructing Models of Change in Systemic Reform
+Pathways to Teaching Science for Understanding in Diverse Schools: Merging Inquiry-Based Science and Sociocultural Constructivism with Multicultural Education
+Special Science Teams Continues
+GK-12 Formal Proposal - Integrating New Media Technologies into Teacher Development
+Integrating Exemplary Physical Science Teacher Enhancement Materials with Mathematics for Preservice Middle School Teachers
+Maricopa Mathematics Mentoring and Renewal
+Developing Science Graduate Students into Middle Grade Science Classroom Resources
+Enlist, Equip, and Empower (E3): An Integrated Program for Middle School Science Teachers
+South Carolina Middle School Science and Mathematics Teacher Recruitment, Certification and Retention Program
+4 Schools for WIE
+Girls Creating Games: Increasing Middle School Girls' Interest in Technology
+Vertically Integrated Partnerships K-16 (VIP K-16)
+Engineering Our World
+Watershed-Integrated Sciences Partnership (WISP) between UMassBoston and Local School Districts
+The UNC Charlotte and Phillip O Berry Academy of Technology Cooperative: Graduate Resources for a Technology Academy
+CAREER: Teaching Elementary School Science as Argument (TESSA)
+------------------------------------------------------------------------------------
+Term pc: (climate)
+
+ice
+sea
+climate
+antarctic
+ocean
+sheet
+arctic
+global
+core
+glacial
+change
+record
+atmospheric
+cores
+conditions
+
+Document pc:
+
+Sea Ice Physical-Structrual Characteristics: Development and SAR Signature in the Pacific Sector of the Southern Ocean
+The Role of Snow in Antarctic Sea Ice Development and Ocean-Atmosphere Energy Exchange
+Collaborative Research: Lithospheric Controls on the Behavior of the West Antarctic Ice Sheet: Aerogeophysics of the Eastern Ross Transect Zone
+Collaborative Research: Lithospheric Controls on the Behavior of the West Antarctic Ice Sheet: Corridor Aerogeophysics of Eastern Ross Transect Zone
+Lithospheric Controls on the Behavior of the West Antarctic Ice Sheet: Corridor Aerogeophyiscs of the Eastern Ross Transect Zone (CASERTZ/WAIS)
+Effects of Greenland Ice on the Earth's Gravity, Crustal Deformation, and Tilt
+Molecular Studies of the Mammalian Programmed Cell Death Gene Ice-3
+Reconstruction of Global Ice Age Ice Sheets from Global Sea-Level and Earth-Deformation Data
+Molecular Studies of the Mammalian Programmed Cell Death Gene Ice-3
+Collaborative Research: Experimental and Theoretical Study of Crack Dynamics in Sea Ice
+Collaborative Research: Experimental and Theoretical Study of Crack Dynamics in Ice
+Glacial History of the Amundsen Sea Shelf
+Ice Sheet Configuration and Erosion Patterns in the Northern Swedish Mountains from Cosmogenic Radionuclides
+The Dynamic Response of Sea Ice and Ice-Ocean Models Using Different Sea-Ice Rheologies
+Radionuclides as Tracers for the Source and Fate of Arctic Sea Ice Sediments.
+Collaborative Research: Paleo Ice Flow Paths from Till Provenance in the Ross Embayment, Antarctica
+Collaborative Proposal: Joint US/Norwegian Studies of Ice/Ocean Interaction in Frozen Fjords
+A New Collaborative Ice Sheet Modelling Program
+Advanced Technology for Radar Sounding of Polar Ice
+Investigation of Interannual Sea Ice Thickness Variability in the Southern Ocean
+Paleo Ice Flow Paths from Till Provenance in the Ross Embayment, Antarctica
+Collaborative Proposal: SHALDRIL - A Demonstration Drilling Cruise to the James Ross Basin
+Investigation of Interannual Sea Ice Thickness Variability in the Southern Ocean
+Investigation of Interannual Sea Ice Thickness Variability in the Southern Ocean
+Assessment of Basal Melt of Petermann Gletscher in Northwestern Greenland
+Collaborative Research: Fabric and Texture Characteristics of Micro-Physical Processes in Ice
+Collaborative Research: FABRIC AND TEXTURE CHARACTERISTICS OF MICRO-PHYSICAL PROCESSES IN ICE
+Cosmogenic Nuclide-Based Boundary Conditions for Numerical Ice Sheet Models: A Simulation of the Fennoscandian Ice Sheet through A Glacial Cycle
+Evolution of Biogenic Exopolymer Concentrations and Interaction with Physical Structure in Arctic Sea Ice
+CMG: Collaborative Research on Multi-Scale Predictions of Arctic Ice
+------------------------------------------------------------------------------------
+Term pc: (computer science education)
+
+computer
+laboratory
+software
+courses
+computational
+computing
+programs
+parallel
+projects
+computers
+tools
+equipment
+level
+modeling
+include
+
+Document pc:
+
+ECSU Second Century Thrust for Excellence in Computer Science
+Enhancing the Computer Science Infrastructure
+VPW: Computer Literacy in Workgroups (Information Technology)
+Computer Science as Scientific Investigation
+Mathematical Foundations of Computer Science
+Black Hole Binaries: Coalescence and Gravitational Radiation
+Earthquake Ground Motion Modeling in Large Basins
+Adaptive Coordination of Predictive Models with Experimental Observations
+Development of Design Facilities to Facilitate Curriculum Revision of the Engineering Design Graphics Sequence
+Enabling MS-Windows and Windows Based Mathematical Software in Current Computer Laboratory
+Theoretical and Computational Studies of Glasses and the Glass Transition
+Mathematical Sciences: Methods for Developing and Evaluating Computer Models Used in Integrated Assessment
+A Parallel Processing Curriculum Incorporating Laboratory Activities and Undergraduate Research
+Theoretical Studies of Aqueous Solvation of Proteins
+MRI: Research Laboratory for Computer Science
+Integrating Haptics into an Undergraduate Computer Science Curriculum
+Computer Laboratory for Undergraduate Research Courses in Behavioral Sciences
+Teaching Computer Ethics with Workshops and the Web
+Understanding and Surviving Computation in the Wild
+PPD: Computer Science Program for Students with Disabilities
+PGE/SEP: An Experiment in Engaging High School and Undergraduate Women in Computer Science
+MRI: Acquisition of Linux Cluster and Workstation Network for Biophysics, Mathematics, and Computer Science Research
+ITR/PE+SY Digital Clay for Shape Input and Display
+ITR/PE+SY Digital Clay for Shape Input and Display
+Integrating Computing with Geometry into an Upper-Level Computer Science Curriculum
+DEM: Hear Our Voices: Girls and Technology at the Computer Clubhouse
+PGE/DEM Computer Science Computing and Mentoring Partnership (CS CAMP)
+Development of a Pedagogical Computer Game Engine Library in Support of Computer Science Education
+Teaching Computer Ethics with Workshops and the Web
+Teaching Computer Ethics with Workshops and the Web
+------------------------------------------------------------------------------------
