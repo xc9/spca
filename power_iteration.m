@@ -1,4 +1,4 @@
-function [ p , q ] = power_iteration( M, options)
+function [ p , q, dnorm ] = power_iteration( M, options)
 %power_iteration performs the power iteration with hard thresholding steps
 % inputs:
 % M                         the mxn document-by-term matrix
@@ -24,10 +24,23 @@ function [ p , q ] = power_iteration( M, options)
 
     %% power iteration algorithm
     % initialize variables
-    p = ones (m, 1);    % initialize to all-ones vector
+    p = Util.thresh(rand(m, 1), k_p );
+    q = Util.thresh(rand(n, 1), k_q );
+    
+    % try highest variance
+    p_ind = Util.spvar(M.ucM,1);
+    [~, p_ind] = Util.thresh(p_ind, k_p);
+    p = zeros(m,1);
+    p(p_ind) = 1;
     p = p/norm(p);
-    q = ones (n, 1);    % initialize to all-ones vector
-    q = q/norm(q);    
+    
+    q_ind = Util.spvar(M.ucM,2);
+    [~, q_ind] = Util.thresh(q_ind, k_q);
+    q = zeros(n,1);
+    q(q_ind) = 1;
+    q = q/norm(q);
+    
+    
     obj0 = inf;
     converged=0;
     iter=0;
@@ -45,7 +58,7 @@ function [ p , q ] = power_iteration( M, options)
       [q, ind_q] = Util.thresh(q_new, k_q); % threshold (do not normalize)
       
       obj1 = norm(M.ucM - p*q', 'fro');
-
+      dnorm = obj1;
       % check termination condition
       if  abs(obj1-obj0) <= tolerance || iter>=max_iteration
          converged=1;

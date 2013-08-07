@@ -1,4 +1,4 @@
-function [ word_pc_list, weights, indices] = wrapper( matrix_file, dict_file, mode )
+function [ word_pc_list, weights, indices] = wrapper( matrix_file, dict_file )
 %wrapper a convenience class for loading the matrix and translating the
 %principal component to a word matrix
 % inputs:
@@ -21,13 +21,13 @@ function [ word_pc_list, weights, indices] = wrapper( matrix_file, dict_file, mo
     %Read in the matrix and dictionary files
     M=Util.load_matrix(matrix_file,1);
     %Set the options
-    options = Util.make_option(150, 15, 0.001, 1000, 10, mode, 0);
+    options = Util.make_option(150, 15, 0.001, 1000, 10, 'b', 0);
     % columns in qs are the principal components
-    [ps, qs] = repeated_power_iteration(M, options);     
+    [~, qs] = nnmf_custom(M);     
     
     words=Util.load_dict(dict_file);
     
-    [indices, weights] = Util.get_indices_and_weights(qs, length(words), options);
+    [indices, weights] = Util.get_indices_and_weights(qs, 15);
     word_pc_list = words(indices);
 end
 

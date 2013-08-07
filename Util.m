@@ -92,15 +92,15 @@ classdef Util
         
         function [ M ] = load_matrix( matrix_file, offset)
             fid=fopen(matrix_file,'r');
-            ijv=textscan(fid,'%f %f %f','delimiter',' ');
+            ijv=textscan(fid,'%f %f %f','delimiter',',');
             fclose(fid);
             M=sparse(ijv{1}+offset,ijv{2}+offset,ijv{3});
         end
         function [ words ] = load_dict( dict_file )
             fid=fopen(dict_file,'r');
-            words=textscan(fid,'%f %s','delimiter',' ');
+            words=textscan(fid,'%s %f','delimiter',',');
             fclose(fid);
-            words=words{2};
+            words=words{1};
         end
         function [ words ] = load_fnames( dict_file )
             fid=fopen(dict_file,'r');
@@ -116,6 +116,28 @@ classdef Util
             options.num_pc = num_pc;
             options.mode = mode;
             options.centerOption = center_option;
+        end
+        
+        function vars = spvar (A, dim)
+            if (dim == 2)
+                [nrows, ncols] = size(A);
+                counts = sum(spones(A),1);
+                means = sum(A,1) ./ max(counts, 1);
+                [i,j,~] = find(A);
+                v = means(j);
+                placedmeans = sparse(i,j,v,nrows,ncols);
+                vars = sum((A - placedmeans).^2, 1) ./ max(counts-1, 1);
+                vars = vars';
+            end
+            if (dim == 1)
+                [nrows, ncols] = size(A);
+                counts = sum(spones(A),2);
+                means = sum(A,2) ./ max(counts, 1);
+                [i,j,~] = find(A);
+                v = means(i);
+                placedmeans = sparse(i,j,v,nrows,ncols);
+                vars = sum((A - placedmeans).^2, 2) ./ max(counts-1, 1);
+            end
         end
         
     end   
