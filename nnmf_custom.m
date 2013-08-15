@@ -39,9 +39,12 @@ for i = 1 : num_pc
     p=[];
     q=[];
     for j=1:replicates
+        %decide what initialization to use 
+        options.useHighestVariance = (j==1);
+        
         % Perform a factorization
         [pn, qn, dnorm] = power_iteration(M, options);
-
+        
 
         
         % Save if this is the best so far

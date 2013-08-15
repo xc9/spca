@@ -1,7 +1,7 @@
-function Test( )
-    testMat = rand(10,10);
-    xargs = nchoosek(1:10,5);
-    yargs = nchoosek(1:10,5);
+function [equal1,equal2] = Test(m, n)
+    testMat = rand(m,n);
+    xargs = nchoosek(1:m,5);
+    yargs = nchoosek(1:n,5);
     bestp=[];
     bestq=[];
     bestnorm = Inf;
@@ -22,7 +22,8 @@ function Test( )
         end
     end
     
-    [p2, q2, n2] = nnmf_custom(testMat, 'threshold_m', 5, 'threshold_n',5,'num_pc',1);
-    
+    [p2, q2, n2] = nnmf_custom(testMat, 'threshold_m', 5, 'threshold_n',5,'num_pc',1,'replicates',5);
+    equal1 = isequal(sort(find(p2)),sort(find(bestp))) & isequal(sort(find(q2)),sort(find(bestq)));
+    equal2 = (abs(n2 - bestnorm)/n2 < 0.001);
 end
 
