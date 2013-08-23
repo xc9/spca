@@ -92,21 +92,21 @@ classdef Util
         
         function [ M ] = load_matrix( matrix_file, offset)
             fid=fopen(matrix_file,'r');
-            ijv=textscan(fid,'%f %f %f','delimiter',' ');
+            ijv=textscan(fid,'%f %f %f','delimiter',',');
             fclose(fid);
             M=sparse(ijv{1}+offset,ijv{2}+offset,ijv{3});
         end
         function [ words ] = load_dict( dict_file )
             fid=fopen(dict_file,'r');
-            words=textscan(fid,'%f %s','delimiter',' ');
+            words=textscan(fid,'%s %f','delimiter',',');
             fclose(fid);
-            words=words{2};
+            words=words{1};
         end
         function [ words ] = load_fnames( dict_file )
             fid=fopen(dict_file,'r');
-            words=textscan(fid,'%d %s','Delimiter','\n');
+            words=textscan(fid,'%s','delimiter','\n');
             fclose(fid);
-            words=words{2};
+            words=words{1};
         end
         function [ options ] = make_option( doc_thresh, term_thresh, tolerance, max_iter, num_pc, mode, center_option )
             options.threshold_m = doc_thresh; % 150 documents
